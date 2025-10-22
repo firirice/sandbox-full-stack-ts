@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "prettier -c ."
+    "lint": "tsc --noEmit && prettier -c . && eslint '**/*.{js,ts,vue}' --max-warnings=0"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.9.0",
