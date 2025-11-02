@@ -1,24 +1,7 @@
 <script setup lang="ts">
-const featuredProducts = [
-  {
-    id: 1,
-    name: 'Product 1',
-    description: 'This is a great product',
-    price: 29.99,
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    description: 'Another amazing product',
-    price: 49.99,
-  },
-  {
-    id: 3,
-    name: 'Product 3',
-    description: 'You will love this',
-    price: 19.99,
-  },
-]
+import { useProducts } from '~/composables/products'
+
+const { products } = useProducts()
 </script>
 
 <template>
@@ -28,7 +11,7 @@ const featuredProducts = [
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Featured Products</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div v-for="product in featuredProducts" :key="product.id" class="border rounded-lg p-4 shadow-md">
+        <div v-for="product in products" :key="product.id" class="border rounded-lg p-4 shadow-md">
           <div class="bg-gray-200 h-48 mb-4 rounded flex items-center justify-center">
             <span class="text-gray-500">Product Image</span>
           </div>
